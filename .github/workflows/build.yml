@@ -6,6 +6,10 @@ on:
       - main
       - master 
 
+env:
+USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+PASSWORD: ${{ secrets.DOCKERHUB_TOKEN }}
+
 jobs:
   docker:
     runs-on: ubuntu-latest
@@ -20,8 +24,8 @@ jobs:
         name: Login to Docker Hub
         uses: docker/login-action@v2
         with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+            username: ${{ env.USERNAME }}
+            password: ${{ env.PASSWORD }}
       -
         name: Build and push
         uses: docker/build-push-action@v4
