@@ -7,8 +7,8 @@ on:
       - master 
 
 env:
-USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
-PASSWORD: ${{ secrets.DOCKERHUB_TOKEN }}
+    USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+    PASSWORD: ${{ secrets.DOCKERHUB_TOKEN }}
 
 jobs:
   docker:
